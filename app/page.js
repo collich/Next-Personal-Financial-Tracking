@@ -1,3 +1,5 @@
+import Button from "@/components/Button"
+
 export default function Home() {
   return (
     <main className="py-5">
@@ -5,7 +7,7 @@ export default function Home() {
 
       <div className="container mx-auto flex justify-between py-5 border-b">
         <div className="left flex gap-3">
-          <button>Add Statement</button>
+          <Button>Add Statement</Button>
         </div>
       </div>
     </main>
