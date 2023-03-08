@@ -1,6 +1,6 @@
 import Button from "@/components/Button"
 import Banner from "@/components/Banner"
-import Table from "@/components/table/Table"
+import Table from "../components/table/Table"
 
 export default function Home() {
   return (
@@ -12,8 +12,9 @@ export default function Home() {
           <Button icon className='flex'>Add Statement</Button>
         </div>
       </div>
-
-      <Table/>
+      <div>
+        <Table/>
+      </div>
     </main>
   )
 }

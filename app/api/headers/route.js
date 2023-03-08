@@ -1,8 +1,12 @@
 export async function GET() {
     return Response.json({
         status: 'Success',
-        data: {
-            
-        }
+        data: [
+            {label: "Salary"},
+            {label: "CPF"},
+            {label: "Expenses"},
+            {label: "Investments"},
+            {label: "Savings"},
+        ]
     })
 }

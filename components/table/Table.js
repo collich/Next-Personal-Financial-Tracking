@@ -1,14 +1,10 @@
-'use client'
+import TableHead from "./TableHead"
 
-const Table = () => {
+const Table = async () => {
   return (
     <table className="min-w-full table-auto">
         <thead>
-            <tr>
-                <th>asdasd</th>
-                <th>231231</th>
-                <th>sada13123</th>
-            </tr>
+          <TableHead/>
         </thead>
         <tbody>
 
