@@ -8,7 +8,7 @@ const Table = async () => {
           <TableHead/>
         </thead>
 
-        <tbody className="bg-indigo-200">
+        <tbody className="bg-gray-200">
           <TableData/>
         </tbody>
     </table>
