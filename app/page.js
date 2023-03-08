@@ -1,13 +1,17 @@
 import Button from "@/components/Button"
+import {GoPlusSmall} from "react-icons/go"
+import Banner from "@/components/Banner"
 
 export default function Home() {
+  const plusIcon = <span className="text-center m-auto"><GoPlusSmall size={23}/></span>
+
   return (
     <main className="py-5">
-      <h1 className="text-xl md:text-5xl text-center font-bold py-10">Personal Financial App</h1>
+      <Banner>Personal Financial App</Banner>
 
       <div className="container mx-auto flex justify-between py-5 border-b">
         <div className="left flex gap-3">
-          <Button>Add Statement</Button>
+          <Button className='flex'>Add Statement {plusIcon}</Button>
         </div>
       </div>
     </main>
