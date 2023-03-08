@@ -11,12 +11,14 @@ const TableHead = async () => {
     const data = await getTableHeader()
     const renderHeader = data.map( (datum, index) => {
         return (
-            <th key={index}>{datum.label}</th>
+            <th key={index} className="px-16 py-2" >
+                <span className="text-gray-200">{datum.label}</span>
+            </th>
         )
     })
 
   return (
-    <tr>
+    <tr className="bg-gray-800">
         {renderHeader}
     </tr>
   )
