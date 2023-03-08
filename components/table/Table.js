@@ -1,4 +1,5 @@
 import TableHead from "./TableHead"
+import TableData from "./TableData"
 
 const Table = async () => {
   return (
@@ -6,8 +7,9 @@ const Table = async () => {
         <thead>
           <TableHead/>
         </thead>
-        <tbody>
 
+        <tbody className="bg-indigo-200">
+          <TableData/>
         </tbody>
     </table>
   )

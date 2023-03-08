@@ -12,7 +12,8 @@ export default function Home() {
           <Button icon className='flex'>Add Statement</Button>
         </div>
       </div>
-      <div>
+
+      <div className="container mx-auto">
         <Table/>
       </div>
     </main>
