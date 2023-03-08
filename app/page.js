@@ -1,7 +1,13 @@
 export default function Home() {
   return (
-    <div>
-      <h1>Welcome</h1>
-    </div>
+    <main className="py-5">
+      <h1 className="text-xl md:text-5xl text-center font-bold py-10">Personal Financial App</h1>
+
+      <div className="container mx-auto flex justify-between py-5 border-b">
+        <div className="left flex gap-3">
+          <button>Add Statement</button>
+        </div>
+      </div>
+    </main>
   )
 }
