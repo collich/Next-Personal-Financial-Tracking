@@ -3,7 +3,7 @@ import TableDataOut from "./TableDataOut"
 const TableData = () => {
   const moneyList = [
     {
-      date: `${(new Date(Date.now())).toLocaleString()}`,
+      date: `${(new Date(Date.now())).toDateString()} - ${(new Date(Date.now())).toLocaleTimeString()}`,
       // date: `${Date.getDate() > 10 ? Date.getDate(): `0${Date.getDate()}-${Date.getMonth() > 10 ? Date.getMonth(): `0${Date.getMonth() + 1}`}-${Date.getFullYear()}`}`,
       salary: 4000,
       CPF: 20,
@@ -12,7 +12,7 @@ const TableData = () => {
       savings: 0,  
     },
     {
-      date: `${(new Date(Date.now())).toLocaleString()}`,
+      date: `${(new Date(Date.now())).toDateString()} - ${(new Date(Date.now())).toLocaleTimeString()}`,
       // date: `${Date.getDate() > 10 ? Date.getDate(): `0${Date.getDate()}-${Date.getMonth() > 10 ? Date.getMonth(): `0${Date.getMonth() + 1}`}-${Date.getFullYear()}`}`,
       salary: 5000,
       CPF: 20,
