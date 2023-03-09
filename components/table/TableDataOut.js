@@ -1,6 +1,14 @@
-const TableDataOut = () => {
+const TableDataOut = ({ data }) => {
+  // const renderData = data.map( datum => {
+
+  // })
+  console.log(data);
+
   return (
-    <div>TableDataOut</div>
+    // {renderData}
+    <div>
+
+    </div>
   )
 }
 
