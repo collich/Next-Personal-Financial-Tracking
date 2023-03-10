@@ -46,7 +46,12 @@ const Form = () => {
 
     const handleSubmit = e => {
         e.preventDefault()
-
+        if (state.date === "mm/dd/yyy") {
+            return alert('Please add date')
+        }
+        if (!Object.values(state).slice(0, -1).some(val => val > 0)){
+            return alert('At least 1 field needs to be')
+        }
         dispatch({
             type: "Reset"
         })
