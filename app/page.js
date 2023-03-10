@@ -1,7 +1,7 @@
 import Button from "@/components/Button"
 import Banner from "@/components/Banner"
 import Table from "../components/table/Table"
-import Form from "@/components/Form"
+import Form from "@/components/forms/Form"
 
 export default function Home() {
   return (
