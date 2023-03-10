@@ -25,6 +25,14 @@ const reducer = (state, action) => {
                 ...state,
                 date: action.payload
             }
+        case 'Reset':
+            return {
+                ...state,
+                salary: 0,
+                expense: 0,
+                investments: 0,
+                date: "mm/dd/yyy"
+            }
     }
 }
 
@@ -38,6 +46,10 @@ const Form = () => {
 
     const handleSubmit = e => {
         e.preventDefault()
+
+        dispatch({
+            type: "Reset"
+        })
     }
 
     const handleSalary = e => {
