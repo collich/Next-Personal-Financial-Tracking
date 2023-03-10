@@ -1,5 +1,3 @@
-'use client'
-
 const TableHeaderOut = ({ data }) => {
   const renderHeader = data.map( (datum, index) => {
     return (

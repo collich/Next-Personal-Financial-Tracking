@@ -1,5 +1,3 @@
-'use client'
-
 const TableDataOut = ({ data }) => {
   const renderData = data.map( (datum, index) => {
     return (
