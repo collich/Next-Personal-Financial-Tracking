@@ -15,5 +15,4 @@ export default function RootLayout({ children }) {
     </html>
   )
 }
-'use client'
 

@@ -52,6 +52,8 @@ const Form = () => {
         if (!Object.values(state).slice(0, -1).some(val => val > 0)){
             return alert('At least 1 field needs to be')
         }
+
+        console.log(state);
         dispatch({
             type: "Reset"
         })
@@ -100,7 +102,7 @@ const Form = () => {
 
         <InputForm type="date" placeholder="Date" className="flex" value={state.date} onChange={handleDate}/>
 
-        <Button className="flex justify-center text-md w-2/6 bg-green-500 text-white hover:bg-gray-100 hover:border-green-500 hover:text-green-500">Submit</Button>
+        <Button className="flex justify-center text-md w-1/6 bg-green-500 text-white hover:bg-gray-100 hover:border-green-500 hover:text-green-500">Submit</Button>
     </form>
   )
 }
