@@ -8,6 +8,7 @@ export async function GET() {
             {label: "Expenses"},
             {label: "Investments"},
             {label: "Savings"},
+            {label: "Actions"},
         ]
     })
 }

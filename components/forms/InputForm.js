@@ -1,4 +1,3 @@
-'use client'
 import classNames from "classnames"
 
 const InputForm = ({placeholder, ...rest}) => {

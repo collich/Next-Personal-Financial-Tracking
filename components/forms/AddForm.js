@@ -1,6 +1,7 @@
 import Button from "../Button"
 
-const AddForm = ({...rest}) => {
+const AddForm = ({ ...rest }) => {
+
   return (
     <div className="container mx-auto flex justify-between py-5 border-b">
         <div className="left flex gap-3">
