@@ -5,10 +5,16 @@ import Form from "./Form"
 
 const FormPage = () => {
     const [FormStatus, setFormStatus] = useState(false)
+    const changeStatus = () => {
+        setFormStatus(!FormStatus)
+    }
+    const showForm = FormStatus && <Form status={changeStatus}/>
+
+
   return (
     <div className="container mx-auto py-5">
-        <AddForm/>
-        <Form/>
+        <AddForm onClick={changeStatus}/>
+        {showForm}
     </div>
   )
 }

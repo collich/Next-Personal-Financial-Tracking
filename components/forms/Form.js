@@ -36,7 +36,7 @@ const reducer = (state, action) => {
     }
 }
 
-const Form = () => {
+const Form = ({status}) => {
     const [state, dispatch] = useReducer(reducer, {
         salary: 0,
         expense: 0,
@@ -54,6 +54,7 @@ const Form = () => {
         }
 
         console.log(state);
+        status()
         dispatch({
             type: "Reset"
         })
