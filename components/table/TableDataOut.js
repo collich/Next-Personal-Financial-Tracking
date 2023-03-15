@@ -6,7 +6,7 @@ const TableDataOut = ({ data }) => {
     return (
       <tr className="bg-gray-50 text-center" key={index}>
         <td className="px-16 py-2 items-center">
-          <span className="text-center ml-2 font-semibold">{(new Date(datum.createdAt).toDateString())}</span>
+          <span className="text-center ml-2 font-semibold">{new Date(datum.date).toDateString()}</span>
         </td>
 
         <td className="px-16 py-2 items-center">

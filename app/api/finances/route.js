@@ -31,6 +31,10 @@ export async function GET() {
     // })
 }
 
+export async function POST() {
+
+}
+
 // const handler = async (req, res) => {
 //   if (req.method === 'GET') {
 //     try {
