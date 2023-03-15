@@ -14,4 +14,7 @@ model Statement {
   id String @id @map("_id") @default(auto()) @db.ObjectId
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  salary Int
+  expenses Int
+  investment Int
 }
