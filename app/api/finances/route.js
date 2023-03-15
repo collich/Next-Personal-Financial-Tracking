@@ -2,12 +2,9 @@ import { createStatement, getStatements } from "@/lib/prisma/statements";
 
 export async function GET() {
   const statement = await getStatements()
-  console.log(statement);
     return Response.json({
       status: "Success",
-      data: [
-        statement
-      ]
+      statement
     })
     // return Response.json({
     //     status: 'Success',

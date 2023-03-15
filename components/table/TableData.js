@@ -3,12 +3,13 @@ import TableDataOut from "./TableDataOut"
 
 const getTableData = async () => {
   const res = await axios.get('http://localhost:3000/api/finances')
-  const data = res.data.data
+  const data = res.data.statement
   return data
 }
 
 const TableData = async () => {
   const moneyList = await getTableData()
+  const dataList = moneyList.statements
   // const moneyList = [
   //   {
   //     date: `${(new Date(Date.now())).toDateString()} - ${(new Date(Date.now())).toLocaleTimeString()}`,
@@ -32,7 +33,7 @@ const TableData = async () => {
   // console.log(data);
 
   return (
-    <TableDataOut data={moneyList}/>
+    <TableDataOut data={dataList}/>
   )
 }
 
