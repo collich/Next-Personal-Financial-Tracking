@@ -1,3 +1,5 @@
+'use client'
+import { useState, useEffect } from "react"
 import axios from "axios"
 import TableDataOut from "./TableDataOut"
 
@@ -7,9 +9,21 @@ const getTableData = async () => {
   return data
 }
 
-const TableData = async () => {
-  const moneyList = await getTableData()
-  const dataList = moneyList.statements
+const TableData = () => {
+  const [dataList, setDataList] = useState([])
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const moneyList = await getTableData()
+      setDataList(moneyList.statements)
+    }
+
+    fetchData()
+  }, [])
+
+  // const moneyList = await getTableData()
+  // const dataList = moneyList.statements
+  // console.log(dataList);
   // const moneyList = [
   //   {
   //     date: `${(new Date(Date.now())).toDateString()} - ${(new Date(Date.now())).toLocaleTimeString()}`,
