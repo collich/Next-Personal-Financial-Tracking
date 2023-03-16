@@ -1,5 +1,5 @@
-export async function GET() {
-    return Response.json({
+export default async function handler(req, res) {
+    res.status(200).json({
         status: 'Success',
         data: [
             {label: "Date"},

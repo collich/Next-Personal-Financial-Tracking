@@ -31,9 +31,33 @@ export async function GET() {
     // })
 }
 
-export async function POST() {
+// export async function POST(req) {
+//   console.log(JSON.stringify(req.body));
+//    const createdStatement = await createStatement(req.body)
+//    return Response.json({
+//     status: 'Success',
+//     createdStatement
+//    })
+// }
 
-}
+
+// export async function POST(req) {
+//   // if (req.method === 'POST') {
+//     try {
+//       const createdStatement = await createStatement(req.body);
+
+//       return Response.json({
+//         status: 'Success',
+//         statement: createdStatement
+//       })
+//     } catch (error) {
+//       console.error(error);
+//       res.status(500).json({ message: 'Internal server error' });
+//     }
+//   // } else {
+//   //   res.status(405).json({ message: 'Method not allowed' });
+//   // }
+// }
 
 // const handler = async (req, res) => {
 //   if (req.method === 'GET') {

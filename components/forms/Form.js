@@ -56,6 +56,7 @@ const Form = ({status}) => {
 
         console.log(state);
         status()
+        axios.post('/api/finances', state)
         dispatch({
             type: "Reset"
         })
