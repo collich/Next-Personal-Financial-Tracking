@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react"
 import axios from "axios"
 import TableDataOut from "./TableDataOut"
+import TableEdit from "./TableEdit"
 
 const getTableData = async () => {
   const res = await axios.get('http://localhost:3000/api/finances')
@@ -11,6 +12,7 @@ const getTableData = async () => {
 
 const TableData = () => {
   const [dataList, setDataList] = useState([])
+  const [TableEditStatus, setTableEditStatus] = useState(false)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -27,8 +29,16 @@ const TableData = () => {
     return () => clearInterval(interval)
   }, [])
 
+  let data = null
+
   const handleEdit = item => {
     console.log(item);
+    setTableEditStatus(status => !status)
+  }
+
+  let renderData = <TableDataOut data={dataList} onClick={handleEdit}/>
+  if (TableEditStatus) {
+    renderData = <TableEdit data={data} onClick={handleEdit}/>
   }
 
   // const moneyList = await getTableData()
@@ -57,7 +67,8 @@ const TableData = () => {
   // console.log(data);
 
   return (
-    <TableDataOut data={dataList} onClick={handleEdit}/>
+    // <TableDataOut data={dataList} onClick={handleEdit}/>
+    renderData
   )
 }
 
