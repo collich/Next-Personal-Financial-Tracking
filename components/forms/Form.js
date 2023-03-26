@@ -53,8 +53,6 @@ const Form = ({status}) => {
         if (!Object.values(state).slice(0, -1).some(val => val > 0)){
             return alert('At least 1 field needs to be')
         }
-
-        console.log(state);
         status()
         axios.post('/api/finances', state)
         dispatch({

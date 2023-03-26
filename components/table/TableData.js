@@ -17,9 +17,19 @@ const TableData = () => {
       const moneyList = await getTableData()
       setDataList(moneyList.statements)
     }
-
     fetchData()
+    
+    const interval = setInterval(() => {
+      console.log("Refresh Data");
+      fetchData()
+    }, 10000)
+
+    return () => clearInterval(interval)
   }, [])
+
+  const handleEdit = item => {
+    console.log(item);
+  }
 
   // const moneyList = await getTableData()
   // const dataList = moneyList.statements
@@ -47,7 +57,7 @@ const TableData = () => {
   // console.log(data);
 
   return (
-    <TableDataOut data={dataList}/>
+    <TableDataOut data={dataList} onClick={handleEdit}/>
   )
 }
 

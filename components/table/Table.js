@@ -1,7 +1,7 @@
 import TableHead from "./TableHead"
 import TableData from "./TableData"
 
-const Table = async () => {
+const Table = () => {
   return (
     <table className="min-w-full table-auto">
         <thead>

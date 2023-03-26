@@ -1,4 +1,3 @@
-// import Button from "@/components/Button"
 import FormPage from "@/components/forms/FormPage"
 import Banner from "@/components/Banner"
 import Table from "../components/table/Table"
