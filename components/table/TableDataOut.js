@@ -3,9 +3,9 @@ import { GoPencil } from "react-icons/go";
 import Button from "../Button";
 
 const TableDataOut = ({ data, onClick }) => {
-  const renderData = data.map( (datum, index) => {
+  const renderData = data.map( (datum) => {
     return (
-      <tr className="bg-gray-50 text-center" key={index}>
+      <tr className="bg-gray-50 text-center" key={datum.id}>
         <td className="px-16 py-2 items-center">
           <span className="text-center ml-2 font-semibold">{new Date(datum.date).toDateString()}</span>
         </td>
@@ -31,7 +31,7 @@ const TableDataOut = ({ data, onClick }) => {
         </td>
 
         <td className="px-16 py-2 items-center">
-          <Button onClick={() => onClick(datum.id) }><GoPencil/></Button>
+          <Button onClick={() => onClick(datum) }><GoPencil/></Button>
         </td>
       </tr>
     )

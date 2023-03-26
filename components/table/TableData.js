@@ -13,6 +13,7 @@ const getTableData = async () => {
 const TableData = () => {
   const [dataList, setDataList] = useState([])
   const [TableEditStatus, setTableEditStatus] = useState(false)
+  const [DataEdit, setDataEdit] = useState({})
 
   useEffect(() => {
     const fetchData = async () => {
@@ -21,24 +22,23 @@ const TableData = () => {
     }
     fetchData()
     
-    const interval = setInterval(() => {
-      console.log("Refresh Data");
-      fetchData()
-    }, 10000)
+    // const interval = setInterval(() => {
+    //   console.log("Refresh Data");
+    //   fetchData()
+    // }, 10000)
 
-    return () => clearInterval(interval)
+    // return () => clearInterval(interval)
   }, [])
-
-  let data = null
 
   const handleEdit = item => {
     console.log(item);
+    setDataEdit(item)
     setTableEditStatus(status => !status)
   }
 
   let renderData = <TableDataOut data={dataList} onClick={handleEdit}/>
-  if (TableEditStatus) {
-    renderData = <TableEdit data={data} onClick={handleEdit}/>
+  if (TableEditStatus && DataEdit) {
+    renderData = <TableEdit data={DataEdit} onClick={handleEdit}/>
   }
 
   // const moneyList = await getTableData()
