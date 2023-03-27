@@ -1,4 +1,4 @@
-import { createStatement, getStatements } from "@/lib/prisma/statements";
+import { createStatement, getStatements, updateStatement } from "@/lib/prisma/statements";
 
 export default async function handler(req, res) {
     console.log(req.body);

@@ -2,17 +2,18 @@
 import { GoCheck } from "react-icons/go"
 import Button from "../Button"
 import { useReducer } from "react"
+import axios from "axios"
 
 const reducer = (state, action) => {
     switch (action.type) {
       case 'UPDATE_DATE':
         return { ...state, date: action.payload }
       case 'UPDATE_SALARY':
-        return { ...state, salary: action.payload }
+        return { ...state, salary: parseInt(action.payload) }
       case 'UPDATE_EXPENSE':
-        return { ...state, expense: action.payload }
+        return { ...state, expense: parseInt(action.payload) }
       case 'UPDATE_INVESTMENTS':
-        return { ...state, investments: action.payload }
+        return { ...state, investments: parseInt(action.payload) }
       default:
         return state
     }
@@ -27,10 +28,17 @@ const TableEdit = ({ data, onClick }) => {
       salary: data.salary,
     })
   
-    const handleSubmit = e => {
+    const handleSubmit = async e => {
       e.preventDefault()
-      console.log(state)
-      onClick(state)
+      const {id, ...data} = state
+      // console.log(state);
+      console.log(data);
+      try {
+        const res = await axios.patch(`/api/finances/${id}`, data)
+        onClick(res.data)
+      } catch (error) {
+        console.error(error)
+      }
     }
   
     return (
