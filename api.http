@@ -2,9 +2,9 @@ POST http://localhost:3000/api/finances HTTP/1.1
 Content-Type: application/json
 
 {
-    "salary": 2000,
-    "expense": 300,
-    "investments": 50,
+    "salary": 1,
+    "expense": 1,
+    "investments": 1,
     "date": "2023-10-03"
 }
 
@@ -19,3 +19,8 @@ Content-Type: application/json
     "salary": 3,
     "investments": 500
 }
+
+
+###
+DELETE http://localhost:3000/api/finances/6412d8e48655581530b8fe5e HTTP/1.1
+Content-Type: application/json
