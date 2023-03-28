@@ -19,7 +19,7 @@ const reducer = (state, action) => {
     }
   }
 
-const TableEdit = ({ data, onClick }) => {
+const TableEdit = ({ data, onClick, dataList, setDataList }) => {
     const [state, dispatch] = useReducer(reducer, {
       date: data.date,
       expense: data.expense,
@@ -32,7 +32,7 @@ const TableEdit = ({ data, onClick }) => {
       e.preventDefault()
       const {id, ...data} = state
       // console.log(state);
-      console.log(data);
+      // console.log(data);
       try {
         const res = await axios.patch(`/api/finances/${id}`, data)
         onClick(res.data)

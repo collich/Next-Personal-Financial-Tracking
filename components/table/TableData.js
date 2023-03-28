@@ -36,9 +36,18 @@ const TableData = () => {
     setTableEditStatus(status => !status)
   }
 
-  let renderData = <TableDataOut data={dataList} onClick={handleEdit}/>
+  const handleDelete = item => {
+    axios.delete(`http://localhost:3000/api/finances/${item.id}`)
+
+    const updatedData = dataList.filter( datum => {
+      return datum.id != item.id
+    })
+    setDataList(updatedData)
+  }
+
+  let renderData = <TableDataOut data={dataList} onClick={handleEdit} onDelete={handleDelete}/>
   if (TableEditStatus && DataEdit) {
-    renderData = <TableEdit data={DataEdit} onClick={handleEdit}/>
+    renderData = <TableEdit data={DataEdit} onClick={handleEdit} dataList={dataList} setDataList={setDataList}/>
   }
 
   // const moneyList = await getTableData()
